@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - DieLine
+  - Coin
+  - Spike
   layers:
   - Default
   - TransparentFX
