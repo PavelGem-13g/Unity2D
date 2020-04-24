@@ -14,7 +14,7 @@ Animator anim;
     bool dead = false;
     public bool inWater;
     public int oxygen;
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     CircleCollider2D cirCol;
 
     // Start is called before the first frame update
@@ -42,19 +42,19 @@ anim.SetBool("isRun",false);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            gameObject.transform.localScale = new Vector3(1, 1, 1);
-            //rb.AddForce(new Vector2(speed * Time.deltaTime, rb.velocity.y));
+            //gameObject.transform.localScale = new Vector3(1, 1, 1);
+            rb.AddForce(new Vector2(speed * Time.deltaTime, rb.velocity.y));
             rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
 
-anim.SetBool("isRun",true);
+//anim.SetBool("isRun",true);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            gameObject.transform.localScale = new Vector3(-1, 1, 1);
-            //rb.AddForce(new Vector2(-speed * Time.deltaTime, rb.velocity.y));
+            //gameObject.transform.localScale = new Vector3(-1, 1, 1);
+            rb.AddForce(new Vector2(-speed * Time.deltaTime, rb.velocity.y));
             rb.velocity = new Vector2(-speed * Time.deltaTime, rb.velocity.y);
 
-anim.SetBool("isRun",true);
+//anim.SetBool("isRun",true);
 
         }
         if (Input.GetKeyDown(KeyCode.Space) && jumpCount > 0)
